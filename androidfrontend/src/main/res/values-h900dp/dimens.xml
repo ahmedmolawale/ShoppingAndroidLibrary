@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="login_form_margin_top">130dp</dimen>
+    <dimen name="payment_form_margin_top">50dp</dimen>
+    <dimen name="quick_search_result_image_panel">130dp</dimen>
+    <dimen name="quick_search_image_panel">280dp</dimen>
+    <dimen name="quick_search_image_profile">200dp</dimen>
+
+    <dimen name="nav_panel_height">60dp</dimen>
+</resources>

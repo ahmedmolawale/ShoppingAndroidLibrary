@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="splash_logo_dims">250dp</dimen>
+    <dimen name="register_edit_text_width">350dp</dimen>
+    <dimen name="dashboard_buttons_width">350dp</dimen>
+    <dimen name="login_layout_margin_top">60dp</dimen>
+
+    <dimen name="dashboard_buttons_height">50dp</dimen>
+    <dimen name="dashboard_buttons_top_margin">50dp</dimen>
+
+    <dimen name="nav_panel_width">400dp</dimen>
+    <dimen name="nav_panel_height">50dp</dimen>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ng.shoppi.shoppingandroidlibrary.FormBActivityDemo">
+
+    <ng.shoppi.androidfrontend.LoginB
+        android:id="@+id/form_b"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:logo_b="@drawable/back4"
+        app:user_id_label_b="Show anss"
+        app:sign_in_label_b="Sign IN"
+        app:sign_up_label_b="Register"/>
+
+</android.support.design.widget.CoordinatorLayout>

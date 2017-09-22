@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--color name="colorPrimary">#3F51B5</color>
+   <color name="colorPrimaryDark">#303F9F</color>
+   <color name="colorAccent">#FF4081</color-->
+
+    <color name="colorPrimary">#692690</color>
+    <color name="colorPrimaryDark">#490680</color>
+    <color name="colorAccent">#F96807</color>
+
+
+
+    <color name="purple">#FF14133B</color>
+    <color name="background">#DEDEDE</color>
+    <color name="buttonPressed">#DD2061</color>
+    <color name="buttonUnPressed">#FF4081</color>
+    <color name="primary_text">#FFF</color>
+    <color name="light_text">#FFF</color>
+    <color name="secondary_text">#DDD</color>
+
+    <color name="hint_text">#FFF</color>
+    <color name="hint_text_search">#222</color>
+    <color name="divider">#888</color>
+
+    <!--SwipeLayout Color schemes-->
+    <color name="orange">#FF9900</color>
+    <color name="green">#009900</color>
+    <color name="blue">#000099</color>
+    <color name="red">#CC0000</color>
+
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#d1395c</color>
+    <color name="dot_dark_screen2">#14a895</color>
+    <color name="dot_dark_screen3">#2278d4</color>
+    <color name="dot_dark_screen4">#a854d4</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#f98da5</color>
+    <color name="dot_light_screen2">#8cf9eb</color>
+    <color name="dot_light_screen3">#93c6fd</color>
+    <color name="dot_light_screen4">#e4b5fc</color>
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen2</item>
+        <item>@color/dot_light_screen3</item>
+        <item>@color/dot_light_screen4</item>
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen2</item>
+        <item>@color/dot_light_screen3</item>
+        <item>@color/dot_light_screen4</item>
+        <item>@color/dot_light_screen3</item>
+        <item>@color/dot_light_screen4</item>
+        <item>@color/dot_light_screen4</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+        <item>@color/dot_dark_screen4</item>
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+        <item>@color/dot_dark_screen4</item>
+        <item>@color/dot_dark_screen3</item>
+        <item>@color/dot_dark_screen4</item>
+        <item>@color/dot_dark_screen4</item>
+    </array>
+
+    <color name="mdtp_accent_color">#009688</color>
+    <color name="mdtp_accent_color_dark">#00796b</color>
+    <color name="editTextBackgroundWhite">#FFFFFF</color>
+
+    <color name="hint_text_olx">#555555</color>
+    <color name="secondary_text_olx">#000000</color>
+
+    <color name="buttonPressed_olx">#D95807</color>
+    <color name="buttonUnPressed_olx">#F96807</color>
+    <color name="buttonDisabled_olx">#9999aa</color>
+    <color name="alertDate">#06706C</color>
+    <color name="text">#222222</color>
+</resources>

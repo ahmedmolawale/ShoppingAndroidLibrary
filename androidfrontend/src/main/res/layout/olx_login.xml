@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFF"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="#252525" />
+
+        <ProgressBar
+            android:id="@+id/progressBarSignIn_olx"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:indeterminateDrawable="@drawable/progress_circle"
+            android:visibility="gone" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:id="@+id/linearLayoutLoginForm_olx"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="70dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/circle_image_olx"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/olx_logo_150x150"
+                    app:civ_border_color="#fff"
+                    app:civ_border_width="3dp"
+                    app:civ_fill_color="#fff" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/login_layout_margin_top"
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <android.support.design.widget.TextInputLayout
+                        style="@style/MyTextInputLayout"
+                        android:textColorHint="#555555"
+                        app:hintTextAppearance="@style/TextInputLayoutAppearance">
+
+                        <EditText
+                            android:id="@+id/editTextEmail_olx"
+                            style="@style/MyEditViews"
+                            android:layout_width="@dimen/register_edit_text_width"
+                            android:layout_gravity="center"
+                            android:drawableLeft="@drawable/email_black_36x36_2"
+                            android:drawablePadding="10dp"
+                            android:hint="@string/prompt_email"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <View
+                        android:layout_width="@dimen/register_edit_text_width"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="3dp"
+                        android:background="#CCCCCC" />
+
+
+                    <android.support.design.widget.TextInputLayout
+                        style="@style/MyTextInputLayout"
+                        android:textColorHint="#555555"
+                        app:hintTextAppearance="@style/TextInputLayoutAppearance">
+
+                        <EditText
+                            android:id="@+id/editTextPassword_olx"
+                            style="@style/MyEditViewsOlx"
+                            android:layout_width="@dimen/register_edit_text_width"
+                            android:layout_gravity="center"
+                            android:drawableLeft="@drawable/lock_open_black_24x24"
+                            android:drawablePadding="10dp"
+                            android:hint="@string/prompt_password"
+                            android:imeActionId="@+id/login"
+                            android:imeActionLabel="@string/action_sign_in_short"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
+                            />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <View
+                        android:layout_width="@dimen/register_edit_text_width"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="3dp"
+                        android:background="#CCCCCC" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="35dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Forgot Password?"
+                            android:textColor="@color/secondary_text_olx"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/textViewForgotPassword_olx"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Click Here"
+                            android:textColor="#0077BE"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Don't have an account?"
+                            android:textColor="@color/secondary_text_olx"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/textViewRegister_olx"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sign Up"
+                            android:textColor="#0077BE"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/buttonSignIn_olx"
+                        android:layout_width="@dimen/register_edit_text_width"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="40dp"
+                        android:background="@drawable/rectangle_button_olx"
+                        android:text="Sign In"
+                        android:textColor="@color/light_text" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Android Front End</string>
+    <string name="action_login">Sign In</string>
+    <string name="action_sign_up">Sign Up</string>
+    <string name="action_user_id_label">Email</string>
+
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="email_label">Email</string>
+
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in_short">Sign in</string>
+
+</resources>

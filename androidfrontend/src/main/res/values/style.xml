@@ -1,0 +1,77 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="MyEditViews" parent="Base.Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/edit_text_rectangle_bordered</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:textColorHint">@color/hint_text</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="MyEditViewsOlx" parent="Base.Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/edit_text</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="MyTextInputLayout" parent="Widget.Design.TextInputLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">23dp</item>
+    </style>
+
+    <style name="TextInputLayoutAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+    <style name="RegisterTextInputLayoutAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#FF0</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+    <style name="MyButtons" parent="Base.Widget.AppCompat.Button">
+        <item name="android:background">@drawable/oval_buttons</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+    </style>
+
+    <style name="MyButtonsBlue" parent="Base.Widget.AppCompat.Button">
+        <item name="android:background">@drawable/oval_buttons_blue</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+    </style>
+
+    <style name="MyRegisterButtons" parent="Base.Widget.AppCompat.Button">
+        <item name="android:background">@drawable/rectangle_button</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+
+
+</resources>

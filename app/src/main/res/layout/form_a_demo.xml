@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ng.shoppi.shoppingandroidlibrary.MainActivity">
+
+  <ng.shoppi.androidfrontend.LoginA
+      android:id="@+id/form_a"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:user_id_label="Username"
+      app:sign_in_label="Log In"
+      app:sign_up_label="Register"
+      app:logo="@drawable/back4"
+      app:background_image="@color/background"
+      />
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="splash_logo_dims">120dp</dimen>
+
+    <dimen name="login_form_width">400dp</dimen>
+    <dimen name="dashboard_item_width">220dp</dimen>
+    <dimen name="quick_search_form_width">480dp</dimen>
+
+    <dimen name="nav_panel_width">400dp</dimen>
+    <dimen name="social_share_span">140dp</dimen>
+    <dimen name="dashboard_span">160dp</dimen>
+
+    <dimen name="mode_icon">80dp</dimen>
+</resources>

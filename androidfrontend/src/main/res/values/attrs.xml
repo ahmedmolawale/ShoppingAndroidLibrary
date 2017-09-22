@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LoginA">
+        <attr name="logo" format="reference"/>
+        <attr name="background_image" format="reference"/>
+        <attr name="user_id_label" format="string"/>
+        <attr name="sign_in_label" format="string"/>
+        <attr name="sign_up_label" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="LoginB">
+        <attr name="logo_b" format="reference"/>
+        <attr name="user_id_label_b" format="string"/>
+        <attr name="sign_in_label_b" format="string"/>
+        <attr name="sign_up_label_b" format="string"/>
+    </declare-styleable>
+
+</resources>
