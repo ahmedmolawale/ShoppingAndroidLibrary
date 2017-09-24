@@ -8,12 +8,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import ng.shoppi.androidfrontend.GenericFormHandler.GenericLoginHandler;
+import ng.shoppi.androidfrontend.genericformhandler.LoginHandler;
 import ng.shoppi.androidfrontend.listeners.LoginOnClickListener;
 
 public class GenericHandlerDemo extends AppCompatActivity implements LoginOnClickListener {
 
-    GenericLoginHandler genericLoginHandler;
+    LoginHandler loginHandler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +26,7 @@ public class GenericHandlerDemo extends AppCompatActivity implements LoginOnClic
         TextView signUp = (TextView) findViewById(R.id.signUp);
         TextView forgotPassword = (TextView) findViewById(R.id.forgotPassword);
 
-        genericLoginHandler = new GenericLoginHandler(email,password,
+        loginHandler = new LoginHandler(email,password,
                 signIn,progressBar,signUp,forgotPassword,true);
 
 
@@ -36,8 +36,8 @@ public class GenericHandlerDemo extends AppCompatActivity implements LoginOnClic
     @Override
     public void onSignInClick() {
         Toast.makeText(getBaseContext(),"Handle Sign In Activity!!!",Toast.LENGTH_LONG).show();
-        if(genericLoginHandler.validateInput()){
-            genericLoginHandler.showProgressBar(true);
+        if(loginHandler.validateInput()){
+            loginHandler.showProgressBar(true);
         }
     }
 

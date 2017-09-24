@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="ng.shoppi.shoppingandroidlibrary.MainActivity">
 
-  <ng.shoppi.androidfrontend.LoginA
+  <ng.shoppi.androidfrontend.forms.LoginFormA
       android:id="@+id/form_a"
       android:layout_width="match_parent"
       android:layout_height="match_parent"

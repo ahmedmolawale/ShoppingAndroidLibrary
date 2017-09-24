@@ -1,8 +1,15 @@
 package ng.shoppi.androidfrontend.listeners;
 
 /**
- * Created by stackcode on 9/20/17.
+ * Implement to handle buttons on registration forms
+ *
+ * @author Olawale
  */
 
 public interface RegistrationOnClickListener {
+
+    void onRegisterClick();
+
+    void onSignInClick();
+
 }

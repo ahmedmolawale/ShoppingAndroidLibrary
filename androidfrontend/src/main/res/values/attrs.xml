@@ -1,18 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="LoginA">
-        <attr name="logo" format="reference"/>
-        <attr name="background_image" format="reference"/>
-        <attr name="user_id_label" format="string"/>
-        <attr name="sign_in_label" format="string"/>
-        <attr name="sign_up_label" format="string"/>
+    <declare-styleable name="LoginFormA">
+        <attr name="logo" format="reference" />
+        <attr name="background_image" format="reference" />
+        <attr name="user_id_label" format="string" />
+        <attr name="sign_in_label" format="string" />
+        <attr name="sign_up_label" format="string" />
+        <attr name="login_validate_email" format="boolean" />
     </declare-styleable>
 
-    <declare-styleable name="LoginB">
-        <attr name="logo_b" format="reference"/>
-        <attr name="user_id_label_b" format="string"/>
-        <attr name="sign_in_label_b" format="string"/>
-        <attr name="sign_up_label_b" format="string"/>
+    <declare-styleable name="LoginFormB">
+        <attr name="logo_b" format="reference" />
+        <attr name="user_id_label_b" format="string" />
+        <attr name="sign_in_label_b" format="string" />
+        <attr name="sign_up_label_b" format="string" />
+        <attr name="login_validate_email_b" format="boolean"/>
     </declare-styleable>
+    <declare-styleable name="RegForm">
+        <attr name="reg_logo" format="reference" />
+        <attr name="reg_user_id" format="string" />
+        <attr name="reg_sign_up_label" format="string" />
+        <attr name="reg_sign_in_label" format="string" />
+        <attr name="reg_background_image" format="reference" />
+        <attr name="reg_background_color" format="color" />
+        <attr name="reg_gender_visible" format="boolean" />
+        <attr name="reg_marital_status_visible" format="boolean" />
+        <attr name="reg_address_visible" format="boolean" />
+        <attr name="reg_religion_visible" format="boolean" />
+        <attr name="reg_phone_visible" format="boolean" />
+        <attr name="reg_validate_email" format="boolean" />
 
+    </declare-styleable>
 </resources>

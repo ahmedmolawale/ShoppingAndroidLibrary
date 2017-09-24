@@ -1,4 +1,4 @@
-package ng.shoppi.androidfrontend;
+package ng.shoppi.androidfrontend.forms;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -19,14 +19,18 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import ng.shoppi.androidfrontend.R;
 import ng.shoppi.androidfrontend.listeners.LoginOnClickListener;
+import ng.shoppi.androidfrontend.models.User;
 import ng.shoppi.androidfrontend.util.Utility;
 
 /**
+ * Simulation of Risk App login form
+ *
  * @author Olawale
  */
 
-public class LoginA extends RelativeLayout {
+public class LoginFormA extends RelativeLayout {
 
     private ImageView backgroundImageView;
     private Button signInButton;
@@ -38,23 +42,24 @@ public class LoginA extends RelativeLayout {
     private TextView signUpTextView;
     private LoginOnClickListener loginOnClickListener;
     private TextView forgotPasswordTextView;
+    private boolean validateEmail;
 
-    public LoginA(Context context) {
+    public LoginFormA(Context context) {
         super(context);
         initView(null);
     }
 
-    public LoginA(Context context, AttributeSet attrs) {
+    public LoginFormA(Context context, AttributeSet attrs) {
         super(context, attrs);
         initView(attrs);
     }
 
-    public LoginA(Context context, AttributeSet attrs, int defStyleAttr) {
+    public LoginFormA(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initView(attrs);
     }
 
-    public LoginA(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public LoginFormA(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         initView(attrs);
     }
@@ -76,12 +81,13 @@ public class LoginA extends RelativeLayout {
         linearLayoutLoginForm = view.findViewById(R.id.linearLayoutLoginForm);
         progressBarSignIn = view.findViewById(R.id.progressBarSignIn);
 
-        TypedArray typedArray = getContext().obtainStyledAttributes(attributeSet, R.styleable.LoginA);
-        Drawable backgroundDrawable = typedArray.getDrawable(R.styleable.LoginA_background_image);
-        Drawable logoDrawable = typedArray.getDrawable(R.styleable.LoginA_logo);
-        String userIdLabel = typedArray.getString(R.styleable.LoginA_user_id_label);
-        String signInLabel = typedArray.getString(R.styleable.LoginA_sign_in_label);
-        String signUpLabel = typedArray.getString(R.styleable.LoginA_sign_up_label);
+        TypedArray typedArray = getContext().obtainStyledAttributes(attributeSet, R.styleable.LoginFormA);
+        Drawable backgroundDrawable = typedArray.getDrawable(R.styleable.LoginFormA_background_image);
+        Drawable logoDrawable = typedArray.getDrawable(R.styleable.LoginFormA_logo);
+        String userIdLabel = typedArray.getString(R.styleable.LoginFormA_user_id_label);
+        String signInLabel = typedArray.getString(R.styleable.LoginFormA_sign_in_label);
+        String signUpLabel = typedArray.getString(R.styleable.LoginFormA_sign_up_label);
+        validateEmail = typedArray.getBoolean(R.styleable.LoginFormA_login_validate_email, true);
 
         if (userIdLabel != null && !userIdLabel.equals(""))
             editTextEmail.setHint(userIdLabel);
@@ -99,13 +105,17 @@ public class LoginA extends RelativeLayout {
 
         if (backgroundDrawable != null)
             backgroundImageView.setImageDrawable(backgroundDrawable);
-
-
         addView(view);
         typedArray.recycle();
     }
 
+    /**
+     * Call to initialize the form
+     *
+     * @param activity Activity or Context
+     */
     public void init(Activity activity) {
+
         loginOnClickListener = (LoginOnClickListener) activity;
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,16 +137,26 @@ public class LoginA extends RelativeLayout {
         });
     }
 
+    /**
+     * @return a user object containing the user information i.e email and password
+     */
+    public User getUser() {
+        return new User(editTextEmail.getText().toString(), editTextPassword.getText().toString());
+    }
+
+    /**
+     * @return true if the input fields are valid
+     */
     public boolean validateInput() {
-        return Utility.validateInput(editTextEmail, editTextPassword, true);
+        return Utility.validateInput(editTextEmail, editTextPassword, validateEmail);
 
     }
 
+    /**
+     * @param show a boolean to indicate showing of progress bar
+     */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     public void showProgressBar(final boolean show) {
-        // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
-        // for very easy animations. If available, use these APIs to fade-in
-        // the progress spinner.
         int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
 
         linearLayoutLoginForm.setVisibility(show ? View.GONE : View.VISIBLE);

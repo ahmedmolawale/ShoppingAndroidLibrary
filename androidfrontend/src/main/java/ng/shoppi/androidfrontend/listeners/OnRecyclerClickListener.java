@@ -1,11 +1,15 @@
-package ng.shoppi.androidfrontend.recycleradapter;
+package ng.shoppi.androidfrontend.listeners;
 
 /**
- *  @author Olawale on 9/21/17.
+ * Implement to handle clicks on item view click
+ *
+ * @author Olawale
  */
 
 public interface OnRecyclerClickListener {
     void onItemClick(int position);
+
     boolean onItemLongClick(int position);
+
     void onImageClick(int position);
 }

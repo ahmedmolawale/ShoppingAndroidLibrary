@@ -1,4 +1,4 @@
-package ng.shoppi.androidfrontend;
+package ng.shoppi.androidfrontend.forms;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -19,14 +19,19 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import ng.shoppi.androidfrontend.R;
 import ng.shoppi.androidfrontend.listeners.LoginOnClickListener;
+import ng.shoppi.androidfrontend.models.User;
 import ng.shoppi.androidfrontend.util.Utility;
 
+
 /**
+ * Simulation of Olx App login form
+ *
  * @author Olawale
  */
 
-public class LoginB extends RelativeLayout {
+public class LoginFormB extends RelativeLayout {
 
     private Button signInButton;
     private LinearLayout linearLayoutLoginForm;
@@ -37,23 +42,24 @@ public class LoginB extends RelativeLayout {
     private TextView signUpTextView;
     private LoginOnClickListener loginOnClickListener;
     private TextView forgotPasswordTextView;
+    private boolean validateEmail;
 
-    public LoginB(Context context) {
+    public LoginFormB(Context context) {
         super(context);
         initView(null);
     }
 
-    public LoginB(Context context, AttributeSet attrs) {
+    public LoginFormB(Context context, AttributeSet attrs) {
         super(context, attrs);
         initView(attrs);
     }
 
-    public LoginB(Context context, AttributeSet attrs, int defStyleAttr) {
+    public LoginFormB(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initView(attrs);
     }
 
-    public LoginB(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public LoginFormB(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         initView(attrs);
     }
@@ -74,11 +80,12 @@ public class LoginB extends RelativeLayout {
         linearLayoutLoginForm = view.findViewById(R.id.linearLayoutLoginForm_olx);
         progressBarSignIn = view.findViewById(R.id.progressBarSignIn_olx);
 
-        TypedArray typedArray = getContext().obtainStyledAttributes(attributeSet, R.styleable.LoginB);
-        Drawable logoDrawable = typedArray.getDrawable(R.styleable.LoginB_logo_b);
-        String userIdLabel = typedArray.getString(R.styleable.LoginB_user_id_label_b);
-        String signInLabel = typedArray.getString(R.styleable.LoginB_sign_in_label_b);
-        String signUpLabel = typedArray.getString(R.styleable.LoginB_sign_up_label_b);
+        TypedArray typedArray = getContext().obtainStyledAttributes(attributeSet, R.styleable.LoginFormB);
+        Drawable logoDrawable = typedArray.getDrawable(R.styleable.LoginFormB_logo_b);
+        String userIdLabel = typedArray.getString(R.styleable.LoginFormB_user_id_label_b);
+        String signInLabel = typedArray.getString(R.styleable.LoginFormB_sign_in_label_b);
+        String signUpLabel = typedArray.getString(R.styleable.LoginFormB_sign_up_label_b);
+        validateEmail = typedArray.getBoolean(R.styleable.LoginFormB_login_validate_email_b, true);
 
         if (userIdLabel != null && !userIdLabel.equals(""))
             editTextEmail.setHint(userIdLabel);
@@ -97,6 +104,11 @@ public class LoginB extends RelativeLayout {
         typedArray.recycle();
     }
 
+    /**
+     * Call to initialize the form
+     *
+     * @param activity Activity or Context
+     */
     public void init(Activity activity) {
         loginOnClickListener = (LoginOnClickListener) activity;
         signInButton.setOnClickListener(new View.OnClickListener() {
@@ -119,10 +131,23 @@ public class LoginB extends RelativeLayout {
         });
     }
 
-    public boolean validateInput() {
-        return Utility.validateInput(editTextEmail, editTextPassword, true);
+    /**
+     * @return a user object containing the user information i.e email and password
+     */
+    public User getUser() {
+        return new User(editTextEmail.getText().toString(), editTextPassword.getText().toString());
     }
 
+    /**
+     * @return true if the input fields are valid
+     */
+    public boolean validateInput() {
+        return Utility.validateInput(editTextEmail, editTextPassword, validateEmail);
+    }
+
+    /**
+     * @param show a boolean to indicate showing of progress bar
+     */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     public void showProgressBar(final boolean show) {
         // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow

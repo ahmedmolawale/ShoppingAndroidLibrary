@@ -1,4 +1,4 @@
-package ng.shoppi.androidfrontend.recycleradapter;
+package ng.shoppi.androidfrontend.recycleradapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -14,8 +14,12 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import ng.shoppi.androidfrontend.R;
+import ng.shoppi.androidfrontend.listeners.OnRecyclerClickListener;
+
 
 /**
+ * A custom Recycler Adapter using a typical view item
+ *
  * @author Olawale
  */
 
@@ -30,6 +34,13 @@ public class CustomRecyclerAdapterB extends RecyclerView.Adapter<CustomRecyclerA
     public static final String TITLE = "title";
     public static final String TIMES_TAMP = "times_tamp";
 
+    /**
+     * Used to initialize the custom recycler adapter
+     *
+     * @param context   Context object
+     * @param items     An arraylist of Map containing the mapping in the view item. Check external docs for visual clarification.
+     * @param loadImage pass true if the adapter should load the image with Picasso
+     */
 
     public CustomRecyclerAdapterB(Context context, ArrayList<Map<String, String>> items, boolean loadImage) {
         this.context = context;
@@ -61,13 +72,13 @@ public class CustomRecyclerAdapterB extends RecyclerView.Adapter<CustomRecyclerA
         return this.items.size();
     }
 
-    public class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
+    class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
 
         private ImageView imageViewAvatar;
         private TextView textViewAlertMessage;
         private TextView textViewAlertTime;
 
-        public RecyclerViewHolder(View itemView) {
+        RecyclerViewHolder(View itemView) {
             super(itemView);
             imageViewAvatar = itemView.findViewById(R.id.imageViewMessageIcon);
             textViewAlertMessage = itemView.findViewById(R.id.textViewAlertMessage);

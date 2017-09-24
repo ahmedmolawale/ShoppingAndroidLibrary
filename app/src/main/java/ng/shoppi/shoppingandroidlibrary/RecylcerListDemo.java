@@ -11,9 +11,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import ng.shoppi.androidfrontend.recycleradapter.CustomRecyclerAdapterA;
-import ng.shoppi.androidfrontend.recycleradapter.CustomRecyclerAdapterB;
-import ng.shoppi.androidfrontend.recycleradapter.OnRecyclerClickListener;
+import ng.shoppi.androidfrontend.recycleradapters.CustomRecyclerAdapterB;
+import ng.shoppi.androidfrontend.listeners.OnRecyclerClickListener;
 
 /**
  * @author Olawale on 9/21/17.

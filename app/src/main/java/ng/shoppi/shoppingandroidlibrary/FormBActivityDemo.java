@@ -4,27 +4,26 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import ng.shoppi.androidfrontend.LoginA;
-import ng.shoppi.androidfrontend.LoginB;
+import ng.shoppi.androidfrontend.forms.LoginFormB;
 import ng.shoppi.androidfrontend.listeners.LoginOnClickListener;
 
 public class FormBActivityDemo extends AppCompatActivity implements LoginOnClickListener{
 
-    private LoginB loginB;
+    private LoginFormB loginFormB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.form_b_demo);
 
-        loginB = (LoginB) findViewById(R.id.form_b);
-        loginB.init(this);
+        loginFormB = (LoginFormB) findViewById(R.id.form_b);
+        loginFormB.init(this);
     }
 
     @Override
     public void onSignInClick() {
         Toast.makeText(getBaseContext(),"Handle Sign In!!!",Toast.LENGTH_LONG).show();
-        if(loginB.validateInput()){
-            loginB.showProgressBar(true);
+        if(loginFormB.validateInput()){
+            loginFormB.showProgressBar(true);
         }
     }
 

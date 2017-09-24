@@ -1,18 +1,21 @@
-package ng.shoppi.androidfrontend.GenericFormHandler;
+package ng.shoppi.androidfrontend.genericformhandler;
 
 import android.content.Context;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 
-import ng.shoppi.androidfrontend.util.Utility;
 import ng.shoppi.androidfrontend.listeners.LoginOnClickListener;
+import ng.shoppi.androidfrontend.models.User;
+import ng.shoppi.androidfrontend.util.Utility;
 
 /**
+ * A Login Handler for any form
+ *
  * @author Olawale
  */
 
-public class GenericLoginHandler {
+public class LoginHandler {
 
     private View forgotPassword;
     private View register;
@@ -21,18 +24,18 @@ public class GenericLoginHandler {
     private boolean emailValidation;
     private EditText editTextEmail;
     private ProgressBar progressBar;
-    Context context;
-
+    private Context context;
     private LoginOnClickListener loginOnClickListener;
 
-
     /**
+     * Use to initialize the Login handler
+     *
      * @param username        The id of the form. Must be an EditText or any of its subclass
      * @param password        The editTextPassword EditText. Must be an EditText or any of its subclass
      * @param signIn          The Sign in Button or TextView as the case may be.
      * @param emailValidation Pass true if you want email validation, false if the user id is not an email
      */
-    public GenericLoginHandler(EditText username, EditText password, View signIn, ProgressBar progressBar, boolean emailValidation) {
+    public LoginHandler(EditText username, EditText password, View signIn, ProgressBar progressBar, boolean emailValidation) {
         this.editTextEmail = username;
         this.editTextPassword = password;
         this.signIn = signIn;
@@ -42,13 +45,15 @@ public class GenericLoginHandler {
     }
 
     /**
+     * Use to initialize the Login handler
+     *
      * @param username        The id of the form. Must be an EditText or any of its subclass
      * @param password        The editTextPassword EditText. Must be an EditText or any of its subclass
      * @param signIn          The Sign in Button or TextView as the case may be.
      * @param register        The Sign up Button or TextView as the case may be.
      * @param emailValidation Pass true if you want email validation, false if the user id is not an email
      */
-    public GenericLoginHandler(EditText username, EditText password, View signIn, ProgressBar progressBar, View register, boolean emailValidation) {
+    public LoginHandler(EditText username, EditText password, View signIn, ProgressBar progressBar, View register, boolean emailValidation) {
         this.editTextEmail = username;
         this.editTextPassword = password;
         this.signIn = signIn;
@@ -59,6 +64,8 @@ public class GenericLoginHandler {
     }
 
     /**
+     * Use to initialize the Login handler
+     *
      * @param username        The id of the form. Must be an EditText or any of its subclass
      * @param password        The editTextPassword EditText. Must be an EditText or any of its subclass
      * @param signIn          The Sign in Button or TextView as the case may be.
@@ -66,7 +73,7 @@ public class GenericLoginHandler {
      * @param register        The Sign up Button or TextView as the case may be.
      * @param forgotPassword  The Forgot Password Button or TextView as the case may be.
      */
-    public GenericLoginHandler(EditText username, EditText password, View signIn, ProgressBar progressBar, View register, View forgotPassword, boolean emailValidation) {
+    public LoginHandler(EditText username, EditText password, View signIn, ProgressBar progressBar, View register, View forgotPassword, boolean emailValidation) {
 
         this.editTextEmail = username;
         this.editTextPassword = password;
@@ -88,7 +95,7 @@ public class GenericLoginHandler {
             }
         });
         //check that the user provides register button in constructor
-        if(register != null){
+        if (register != null) {
             register.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -97,7 +104,7 @@ public class GenericLoginHandler {
             });
         }
 
-        if(forgotPassword != null){
+        if (forgotPassword != null) {
             forgotPassword.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -107,12 +114,25 @@ public class GenericLoginHandler {
         }
 
     }
+
+    /**
+     * @return true if the input fields are valid
+     */
     public boolean validateInput() {
-        return Utility.validateInput(editTextEmail,editTextPassword,emailValidation);
+        return Utility.validateInput(editTextEmail, editTextPassword, emailValidation);
     }
 
+    /**
+     * @param show a boolean to indicate showing of progress bar
+     */
     public void showProgressBar(final boolean show) {
         Utility.showProgressBar(show, progressBar);
     }
 
+    /**
+     * @return a user object containing the user information i.e email and password
+     */
+    public User getUser() {
+        return new User(editTextEmail.getText().toString(), editTextPassword.getText().toString());
+    }
 }

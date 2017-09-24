@@ -22,13 +22,14 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import ng.shoppi.androidfrontend.R;
+import ng.shoppi.androidfrontend.listeners.OnboardingListener;
 
 
 /**
  * @author Olawale
  */
 
- class OnboardingActivity extends AppCompatActivity {
+class OnboardingActivity extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private Context context;
@@ -59,21 +60,20 @@ import ng.shoppi.androidfrontend.R;
         buttonNext = (Button) findViewById(R.id.btn_next);
 
         context = OnboardingViews.mActivity;
-        //GEEZZZ
         onboardingListener = (OnboardingListener) context;
         setStatusBar();
         int[] layoutIds;
         //grab the message sent via intent
         Intent intent = getIntent();
-        if(intent != null && intent.hasExtra(OnboardingViews.FRAGMENT_LAYOUT)){
+        if (intent != null && intent.hasExtra(OnboardingViews.FRAGMENT_LAYOUT)) {
             layoutIds = intent.getIntArrayExtra(OnboardingViews.FRAGMENT_LAYOUT);
             //for each layout id, we create a placeholder fragment
-            for(int i =0; i < layoutIds.length; i++){
+            for (int i = 0; i < layoutIds.length; i++) {
                 layouts.add(PlaceholderFragment.newInstance(layoutIds[i]));
             }
-        }else if(intent != null && intent.hasExtra(OnboardingViews.DEFAULT_FRAGMENT_LAYOUT)){
+        } else if (intent != null && intent.hasExtra(OnboardingViews.DEFAULT_FRAGMENT_LAYOUT)) {
             //create DEFAULT_FRAGMENT_COUNT fragments for default
-            for(int i =0; i < DEFAULT_FRAGMENT_COUNT; i++){
+            for (int i = 0; i < DEFAULT_FRAGMENT_COUNT; i++) {
                 layouts.add(PlaceholderFragment.newInstance(R.layout.default_onboarding_fragment));
             }
 
@@ -133,6 +133,7 @@ import ng.shoppi.androidfrontend.R;
     private int getItem(int i) {
         return mViewPager.getCurrentItem() + i;
     }
+
     private void addBottomDots(int currentPage) {
         dots = new TextView[layouts.size()];
         int[] colorsActive = getResources().getIntArray(R.array.array_dot_active);
@@ -155,9 +156,9 @@ import ng.shoppi.androidfrontend.R;
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+    private class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        public SectionsPagerAdapter(FragmentManager fm) {
+        SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
@@ -190,6 +191,7 @@ import ng.shoppi.androidfrontend.R;
             return null;
         }
     }
+
     private void setStatusBar() {
         //Requires APi 21
         if (Build.VERSION.SDK_INT >= 21) {
@@ -200,8 +202,10 @@ import ng.shoppi.androidfrontend.R;
             window.setStatusBarColor(context.getResources().getColor(R.color.colorPrimaryDark));
         }
     }
+
     public static class PlaceholderFragment extends Fragment {
         private static final String LAYOUT_ID = "layout_id";
+
         public PlaceholderFragment() {
         }
 
@@ -213,6 +217,7 @@ import ng.shoppi.androidfrontend.R;
             fragment.setArguments(args);
             return fragment;
         }
+
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {

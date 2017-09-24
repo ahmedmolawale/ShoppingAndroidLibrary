@@ -81,4 +81,5 @@
     <color name="buttonDisabled_olx">#9999aa</color>
     <color name="alertDate">#06706C</color>
     <color name="text">#222222</color>
+    <color name="mdtp_white">#ffffff</color>
 </resources>

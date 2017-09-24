@@ -1,15 +1,16 @@
 package ng.shoppi.androidfrontend.listeners;
 
 /**
- * Created by stackcode on 9/19/17.
+ * Implement to handle buttons on login forms
+ *
+ * @author Olawale
  */
 
 public interface LoginOnClickListener {
 
-        void onSignInClick();
+    void onSignInClick();
 
-        void onSignUpClick();
+    void onSignUpClick();
 
-        void onForgetPasswordClick();
-
+    void onForgetPasswordClick();
 }
